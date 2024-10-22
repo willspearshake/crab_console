@@ -9,8 +9,11 @@ pub mod console_controls {
         print!("{}2J", CSI);
     }
     
-    pub fn move_cursor(row_col: (i8, i8)) {
-        let (row, col) = row_col;
+    pub fn move_cursor(row: i8,col: i8) {
         print!("{}{};{}H", CSI, row, col);
+    }
+
+    pub fn hide_cursor() {
+        print!("{}?25l", CSI);
     }
 }
